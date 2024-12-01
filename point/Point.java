@@ -52,4 +52,15 @@ public class Point {
     public Point add(Point other) {
         return new Point(this.x + other.x, this.y + other.y);
     }
+
+    public static void main(String[] args) {
+        Point a = new Point(10, 5);
+        Point b = new Point(3, 7);
+
+        Point c = a.add(b);
+
+        System.out.println(a); 
+        System.out.println(b); 
+        System.out.println(c); 
+    } 
 }
