@@ -20,7 +20,9 @@ public class AutoPen extends Pen {
     }
 
     @Override
-    public void write(Paper paper, String message) throws WritingUtencilException {
+    public final void write(Paper paper, String message)
+        throws WritingUtencilException
+    {
         if ( !this.isOpen ) {
             throw new ClosedPenException();
         }

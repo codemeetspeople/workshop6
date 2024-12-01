@@ -1,24 +1,13 @@
-public class Pen {
-    protected int amount;
-    protected int capacity;
-
+public class Pen extends WritingUtencil {
     public Pen(int capacity) {
-        this.amount = capacity;
-        this.capacity = capacity;
+        super(capacity);
     }
 
     public Pen() {
         this(4096);
     }
 
-    public int getAmount() {
-        return this.amount;
-    }
-
-    public int getCapacity() {
-        return this.capacity;
-    }
-
+    @Override
     public void write(Paper paper, String message) throws WritingUtencilException {
         if ( this.amount == 0 ) {
             throw new OutOfInkException();
@@ -42,5 +31,10 @@ public class Pen {
         out.append(")");
 
         return out.toString();
+    }
+
+    public static void main(String[] args) throws WritingUtencilException {
+        Pen pen = new Pen();
+        System.out.println(pen);
     }
 }
